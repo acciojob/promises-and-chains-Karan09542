@@ -18,9 +18,9 @@ function formValidation(e) {
 function validateWithPromise(age, name){
 	return new Promise((resolve, reject) => {
 	if(age > 18){
-		resolve("Welcome,. You can vote.")
+		resolve(`Welcome, ${name}. You can vote.`)
 	}else {
-		reject("Oh sorry Doe. You aren't old enough.")
+		reject(`Oh sorry ${name}. You aren't old enough.`)
 	}
 	})
 }
