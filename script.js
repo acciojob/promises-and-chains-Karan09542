@@ -4,7 +4,7 @@ function formValidation(e) {
 	const age = document.getElementById("age").value.trim();
 	const name = document.getElementById("name").value.trim();
 	if(!age || !name){
-		alert("Please enter valid details.")
+		alert("Please enter valid details")
 		return
 	}
 	const showMessage = (message, delay=4000) => {
