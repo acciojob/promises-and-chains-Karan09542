@@ -7,15 +7,20 @@ function formValidation(e) {
 		alert("Please enter valid details.")
 		return
 	}
-	
-
 	const showMessage = (message, delay=4000) => {
 		setTimeout(()=> alert(message), delay)
 	}
+	validateWithPromise(age, name)
+	.then(message => showMessage(message))
+	.catch(error => showMessage(error))
+}
 
+function validateWithPromise(age, name){
+	return new Promise((resolve, reject) => {
 	if(age > 18){
-		showMessage("Welcome,. You can vote.")
+		resolve("Welcome,. You can vote.")
 	}else {
-		showMessage("Oh sorry Doe. You aren't old enough.")
+		reject("Oh sorry Doe. You aren't old enough.")
 	}
+	})
 }
